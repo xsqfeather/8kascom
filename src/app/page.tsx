@@ -4,6 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import MediaCard from '@/components/MediaCard';
 import { MoreArticles } from '@/components/MoreArticles';
 
+
 async function getData() {
   const res = await fetch(`https://rest.8kas.com/api/articles?page=1&perPage=48`)
   if (!res.ok) {
@@ -33,6 +34,7 @@ export default async function HomePage() {
           <MoreArticles />
         
         </Grid>
+         
     </Box>
   );
 }
