@@ -6,9 +6,14 @@ import Typography from '@mui/material/Typography';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 
+export const metadata = {
+  title: '8Kas Articles',
+  description: 'Causal Inference, Machine Learning, and Software Engineering',
+};
 
-export function RootLayout({ children }: { children: React.ReactNode }) {
-  
+
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
