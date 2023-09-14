@@ -5,13 +5,14 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Chip } from '@mui/material';
 
-export default function MediaCard({ heading, text }: { heading: string; text: string }) {
+export default function MediaCard({ heading, cover, chips }: { heading: string;  cover:string, chips: string[] }) {
   return (
     <Card>
       <Image
         alt="Random image"
-        src="https://source.unsplash.com/random"
+        src={cover}
         width={640}
         height={480}
         style={{
@@ -24,9 +25,11 @@ export default function MediaCard({ heading, text }: { heading: string; text: st
         <Typography gutterBottom variant="h5" component="div">
           {heading}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {text}
-        </Typography>
+        {
+          chips.map((chip) => (
+            <Chip label={chip} />
+          ))
+        }
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
