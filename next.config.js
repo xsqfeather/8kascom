@@ -7,6 +7,14 @@ const nextConfig = {
       transform: '@mui/icons-material/{{member}}',
     },
   },
+  webpack: function(config){
+    //import markdown
+    config.module.rules.push({
+        test: /\.md$/,
+        use: 'raw-loader',
+    });
+    return config;
+  },
   images: {
     remotePatterns: [
       {
