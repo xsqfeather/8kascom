@@ -26,8 +26,8 @@ export default function MediaCard({ heading, cover, chips }: { heading: string; 
           {heading}
         </Typography>
         {
-          chips.map((chip) => (
-            <Chip label={chip} />
+          chips?.map((chip) => (
+            <Chip label={chip} key={chip} />
           ))
         }
       </CardContent>
