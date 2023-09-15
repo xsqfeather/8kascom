@@ -1,13 +1,21 @@
-import * as React from 'react';
-import Image from 'next/image';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Chip } from '@mui/material';
+import * as React from "react";
+import Image from "next/image";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { Chip } from "@mui/material";
 
-export default function MediaCard({ heading, cover, chips }: { heading: string;  cover:string, chips: string[] }) {
+export default function MediaCard({
+  heading,
+  cover,
+  chips,
+}: {
+  heading: string;
+  cover: string;
+  chips: string[];
+}) {
   return (
     <Card>
       <Image
@@ -16,20 +24,24 @@ export default function MediaCard({ heading, cover, chips }: { heading: string; 
         width={640}
         height={480}
         style={{
-          maxWidth: '100%',
-          height: '200px',
-          objectFit: 'cover',
+          maxWidth: "100%",
+          height: "200px",
+          objectFit: "cover",
         }}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {heading}
         </Typography>
-        {
-          chips?.map((chip) => (
-            <Chip label={chip} key={chip} />
-          ))
-        }
+        {chips.splice(0, 3).map((chip) => (
+          <Chip
+            sx={{
+              margin: "2px",
+            }}
+            label={chip}
+            key={chip}
+          />
+        ))}
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
