@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
-import MediaCard from "@/components/MediaCard";
 import { MoreArticles } from "@/components/MoreArticles";
 import { getList } from "@/services/dataProvider";
 

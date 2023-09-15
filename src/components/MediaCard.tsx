@@ -5,19 +5,46 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Chip } from "@mui/material";
+import { ButtonBase, ButtonBaseProps, Chip } from "@mui/material";
+import Link from "next/link";
+
+const LinkButton = (props: ButtonBaseProps & { href: string }) => (
+  <ButtonBase
+    component={Link}
+    variant="contained"
+    {...props}
+    href={props.href}
+    sx={{
+      margin: "5px",
+      textDecoration: "none",
+      backgroundColor: "none",
+    }}
+  />
+);
 
 export default function MediaCard({
   heading,
   cover,
   chips,
+  href,
 }: {
   heading: string;
   cover: string;
   chips: string[];
+  href: string;
 }) {
   return (
-    <Card>
+    <Card
+      component={LinkButton}
+      href={href}
+      sx={{
+        display: "block",
+        "&:hover": {
+          backgroundColor: "none",
+          textDecoration: "none",
+        },
+      }}
+    >
       <Image
         alt="Random image"
         src={cover}

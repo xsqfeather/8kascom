@@ -112,6 +112,7 @@ export function MoreArticles(props: { initArticles: any[] }) {
             {list?.map((item: any, index: number) => (
               <Grid key={index} sm={6} xs={12} lg={3} md={4} xl={2}>
                 <MediaCard
+                  href={`/articles/${item.title}/${item.id}`}
                   cover={item.cover}
                   heading={item.title}
                   chips={item.tags || []}
