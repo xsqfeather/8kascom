@@ -1,6 +1,6 @@
 import { getOne } from "@/services/dataProvider";
 import { Container, Typography } from "@mui/material";
-
+export const runtime = "edge";
 export default async function ArticlePageDetail({
   params,
 }: {
