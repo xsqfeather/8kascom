@@ -2,8 +2,12 @@
 import { Stack, ButtonBase, Typography, Divider } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import SearchIcon from "@mui/icons-material/Search";
 
-const DeskTopMenuItem = (props: { link: string; label: string }) => {
+const DeskTopMenuItem = (props: {
+  link: string;
+  label: string | React.ReactNode;
+}) => {
   const parentPath = usePathname();
   const isActive = parentPath === props.link;
   const { link, label } = props;
@@ -12,6 +16,7 @@ const DeskTopMenuItem = (props: { link: string; label: string }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "baseline",
       }}
       LinkComponent={Link}
       href={link}
@@ -37,6 +42,27 @@ const DeskTopMenuItem = (props: { link: string; label: string }) => {
 export default function DeskTopMenu() {
   return (
     <Stack direction={"row"} spacing={2} justifyContent={"center"}>
+      <ButtonBase
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+        LinkComponent={Link}
+        href={"search"}
+      ></ButtonBase>
+      <DeskTopMenuItem
+        link="/search"
+        label={
+          <SearchIcon
+            sx={{
+              position: "relative",
+              top: "5px",
+            }}
+            fontSize="medium"
+            color="primary"
+          />
+        }
+      />
       <DeskTopMenuItem link="/" label="首页" />
       <DeskTopMenuItem link="/hot" label="热门" />
       <DeskTopMenuItem link="/blogs" label="博客" />

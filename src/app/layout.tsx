@@ -7,6 +7,7 @@ import DrawerToggler from "@/components/DrawerToggler";
 import DeskTopMenu from "@/components/DeskTopMenu";
 import RouteChangeDetector from "@/components/RouteChangeDetector";
 import { Suspense } from "react";
+import { Stack } from "@mui/material";
 export const runtime = "edge";
 
 export const metadata = {
@@ -25,9 +26,16 @@ export default function RootLayout({
         <ThemeRegistry>
           <AppBar position="fixed" sx={{ zIndex: 50 }}>
             <Toolbar sx={{ backgroundColor: "background.paper" }}>
-              <DrawerToggler />
-
-              <DeskTopMenu />
+              <Stack
+                direction="row"
+                justifyContent={"space-between"}
+                sx={{
+                  width: "100%",
+                }}
+              >
+                <DrawerToggler />
+                <DeskTopMenu />
+              </Stack>
             </Toolbar>
           </AppBar>
 
