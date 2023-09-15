@@ -2,12 +2,11 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import DashboardIcon from "@mui/icons-material/Dashboard";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
-import { ButtonBase } from "@mui/material";
-import Link from "next/link";
 import DrawerToggler from "@/components/DrawerToggler";
+import DeskTopMenu from "@/components/DeskTopMenu";
+import RouteChangeDetector from "@/components/RouteChangeDetector";
+import { Suspense } from "react";
 export const runtime = "edge";
 
 export const metadata = {
@@ -27,13 +26,11 @@ export default function RootLayout({
           <AppBar position="fixed" sx={{ zIndex: 50 }}>
             <Toolbar sx={{ backgroundColor: "background.paper" }}>
               <DrawerToggler />
-              <ButtonBase LinkComponent={Link} href="/">
-                <Typography variant="h6" noWrap component="div" color="black">
-                  8Kas Articles
-                </Typography>
-              </ButtonBase>
+
+              <DeskTopMenu />
             </Toolbar>
           </AppBar>
+
           <Box
             component="main"
             sx={{
