@@ -1,11 +1,13 @@
-import axios from 'axios';
-
-export async function createSession(params: { username: string; password: string }) {
+export async function createSession(params: {
+  username: string;
+  password: string;
+}) {
   const { username, password } = params;
-  const { data } = await axios.post('/api/sessions', {
-    username,
-    password,
+  const res = await fetch("/api/sessions", {
+    method: "POST",
+    body: JSON.stringify({ username, password }),
   });
-  localStorage.setItem('access_token', data.token);
+  const data = await res.json();
+  localStorage.setItem("access_token", data.token);
   return data;
 }

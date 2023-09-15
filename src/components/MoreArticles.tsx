@@ -62,7 +62,7 @@ export function MoreArticles(props: { initArticles: any[] }) {
     if (scrollTop + clientHeight === scrollHeight) {
       console.log("hit the bottom");
       //back a little
-
+      GlobalControllers[0].abort();
       setLoading(true);
       //save the flow
       if (throttle.current) {
