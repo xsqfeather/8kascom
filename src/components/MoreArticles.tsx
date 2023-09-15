@@ -41,7 +41,6 @@ export function MoreArticles(props: { initArticles: any[] }) {
   };
 
   const fetchMoreListItems = async (p: number) => {
-    setLoading(true);
     const list = await cachePageData(p);
     setPage(p + 1);
     setLists([...lists, list]);
@@ -59,25 +58,23 @@ export function MoreArticles(props: { initArticles: any[] }) {
     setLoading(false);
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     //hit the bottom
-    if (scrollTop + clientHeight === scrollHeight) {
-      console.log("hit the bottom");
-      //back a little
-      GlobalControllers[0].abort();
+    if (scrollTop + clientHeight >= scrollHeight - 150) {
       setLoading(true);
-      //save the flow
+      GlobalControllers[0]?.abort();
       if (throttle.current) {
         clearTimeout(throttle.current);
         throttle.current = null;
       }
       throttle.current = setTimeout(async () => {
-        console.log("fetch more list items");
         fetchMoreListItems(page);
         throttle.current = null;
       }, 1000);
+      return;
     }
     //hit the top
     if (scrollTop === 0) {
       handleTopRefresh();
+      return;
     }
     //show back top button
     if (scrollTop > 100) {
@@ -85,6 +82,7 @@ export function MoreArticles(props: { initArticles: any[] }) {
     } else {
       setShowBackTop(false);
     }
+    return;
   };
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -128,7 +126,7 @@ export function MoreArticles(props: { initArticles: any[] }) {
         <Stack
           sx={{
             width: "100%",
-            minHeight: 200,
+            minHeight: 150,
             opacity: 0.5,
           }}
           direction={"column"}
