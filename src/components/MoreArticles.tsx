@@ -114,6 +114,7 @@ export function MoreArticles(props: { initArticles: any[] }) {
                 <MediaCard
                   href={`/articles/${item.title}/${item.id}`}
                   cover={item.cover}
+                  publishTime={item.publishTime}
                   heading={item.title}
                   chips={item.tags || []}
                 />
