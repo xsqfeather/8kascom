@@ -2,6 +2,8 @@ import { getCookie } from "cookies-next";
 import queryString from "query-string";
 import { GetListQuery } from "../types/query";
 
+export const runtime = "edge";
+
 export const GlobalControllers: AbortController[] = [];
 
 export const getHeaders = () => {

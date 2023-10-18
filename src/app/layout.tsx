@@ -5,9 +5,8 @@ import Toolbar from "@mui/material/Toolbar";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import DrawerToggler from "@/components/DrawerToggler";
 import DeskTopMenu from "@/components/DeskTopMenu";
-import RouteChangeDetector from "@/components/RouteChangeDetector";
-import { Suspense } from "react";
 import { Stack } from "@mui/material";
+
 export const runtime = "edge";
 
 export const metadata = {

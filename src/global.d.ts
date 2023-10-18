@@ -1,2 +1,4 @@
-declare module "*.md"
-declare module "*.css"
+export const runtime = "edge";
+
+declare module "*.md";
+declare module "*.css";
