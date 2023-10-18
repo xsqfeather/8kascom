@@ -10,26 +10,26 @@
   },
   "dependencies": {
     "@artsy/fresnel": "^6.2.1",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.9",
-    "@mui/material": "^5.14.9",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
     "@types/node": "20.5.9",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "cookies-next": "^4.0.0",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "cookies-next": "latest",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
-    "markdown-to-jsx": "^7.3.2",
-    "moment": "^2.29.4",
-    "next": "13.4.0",
+    "markdown-to-jsx": "latest",
+    "moment": "latest",
+    "next": "latest",
     "query-string": "^8.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.2.2"
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.6.0",
+    "@cloudflare/next-on-pages": "^1.6.3",
     "raw-loader": "^4.0.2"
   }
 }
